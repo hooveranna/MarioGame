@@ -1,0 +1,18 @@
+﻿Author of the code review: Curtis Peace
+
+Date of the code review: 10/15/2019
+
+Sprint number: 2
+Name of the .cs file being reviewed: EnemyModel.cs, GoombaEnemyModel.cs, TurtleEnemyModel.cs
+
+Author of the .cs file being reviewed: Pravesh Khanal
+
+Specific comments on code quality: The abstract EnemyModel class allows for minimal repeated code in the GoombaEnemyModel and TurtleEnemyModel classes.
+Since all enemies behave basically the same way, this approach works very well.
+
+Number of minutes taken to complete the review: 15
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+A hypothetical change would be adding another enemy type to the game. The current implementation could very easily support this change. All one would
+need to do is create a new class inheriting from EnemyModel. In this class, one would only have to get the right textures and animation frames to
+implement the new enemy.

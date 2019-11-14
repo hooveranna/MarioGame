@@ -1,0 +1,20 @@
+﻿Author of the code review: Andrew Reade
+
+Date of the code review:9/24/2019
+
+Sprint number: 1
+Name of the .cs file being reviewed: KeyboardController.cs, GamePadController.cs
+
+Author of the .cs file being reviewed: Annalise Hoover
+
+Specific comments on code quality: Within both files, there is a lot of reused code for all of the if statements, which could easily fixed by
+replacing them with a switch statement. In addition, the lists of commands in both classes rely upon the commands being input in the correct 
+order in the main function, whereas a better idea would be to include them within the class initialization itself, which would also eliminate
+the need for the add function. However, theinclusion of wrtiting lines to the debug menu is a good one, as it allows the user to check if 
+the inputs are being read from the source, such as the controller or the gamepad.
+
+Number of minutes taken to complete the review: 20
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not 
+easily support that change: Adding a new function to the game, eg. a button to give the player star power state, could be complex for this
+implementation, as a new key would need to be added to the list of if statements as well as requiring the 

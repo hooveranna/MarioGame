@@ -1,0 +1,18 @@
+﻿Author of the code review: Pravesh Khanal
+
+Date of the code review: 9/24/2019
+
+Sprint number: 1
+Name of the .cs file being reviewed: 
+
+Author of the .cs file being reviewed: Curtis Peace
+
+Specific comments on code quality: During the first impressions, the code seems very well organized based on each individual state.
+Upon further inspections, the conditional (if and else if) statements were a bit of a challenge to follow. Usually switch statements can solve this issue.
+The game time is used like it is supposed to, but the game ticks are not as easy to visualize than game time in milliseconds.
+
+Number of minutes taken to complete the review: 12
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+If we hypothetically wanted to add another state like sliding state to mario, we can easily add that by adding a simple conditional statement, adding its texture and defining the
+conditional variables on the top of the file. Looking at this factory, perhaps even creating a new factory for block sprites and their states would be helpful.

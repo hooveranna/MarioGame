@@ -1,0 +1,22 @@
+﻿Author of the code review: Pravesh Khanal
+
+Date of the code review: 10/15/2019
+
+Sprint number: 2
+Name of the .cs file being reviewed: CollisionGrid and GridSquare
+
+Author of the .cs file being reviewed: Curtis Peace
+
+Specific comments on code quality: In CollisionGrid, "allCollidables" list has ICollidable objects that may never experience collision. Perhaps adding the ICollidables in a certain radius or distance of the Avatar would greatly reduce
+the length of the list which would improve search time in the list and ultimately improve performance. The loop inside the CollisionGrid constructor seems to be adding new gridsquares for each row and column, but it may be better to
+put that loop inside a method so that changing the gridsquares shape or size would be easier to modify later on. CollisionGrid's Draw method could be a separate class that handles drawing the collision grid or a general sprite class
+for other objects may be easily able to draw the bounding boxes and their respective colors with ease. The nested loops inside the collision Grid make it hard to follow the code and make it even harder to change variables that affect
+the return values of the method. However, overall, the class is well written besides these minor inconveniences.
+In Gridsquare, the method "HandleCollisions" contains two for loops that handle moving objects collisions and non moving object's collisions. These two loops would make a perfect candidate to extract and form two methods. This would
+make is easier to see the overal task of HandleCollision and make it easier to modify later on.
+
+Number of minutes taken to complete the review: 28
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change: A hypothetical change would be to separate the loops inside "HandleCollisions"
+into separate methods so that when we decide to add collisions for multiple moving objects or multiple moving objects and non moving objects, we could easily add another method that could accomplish those tasks. Then, we would call
+that newly added method inside "HandleCollisions". The current implementation does support that change, but it wouldn't be the most efficient way to modify or add new changes such as the one suggested above.

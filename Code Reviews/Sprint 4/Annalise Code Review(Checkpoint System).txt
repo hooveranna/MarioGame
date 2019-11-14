@@ -1,0 +1,14 @@
+﻿Author of the code review: Annalise Hoover
+
+Date of the code review: 11/12/2019
+
+Sprint number: 4
+Name of the .cs file being reviewed: Checkpoint.cs
+
+Author of the .cs file being reviewed: Curtis Peace
+
+Specific comments on code quality: Checkpoint implementation makes logical sense seeing how it is implemented in the collision detection, but there is a decent amount from the ICollidable interface that isn't really applicable for this type. Because of this, there is probably a way to simplify the required methods into something more usable, making it easier to understand what is actually accomplished by the structure. 
+
+Number of minutes taken to complete the review: 15
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change: If there are other structures that need to implement this concept for collisions, this class does not allow for easy re-implimentation. That would be a smart thing to look into, as it would make some of our other classes much more simple and consolidated as well. 

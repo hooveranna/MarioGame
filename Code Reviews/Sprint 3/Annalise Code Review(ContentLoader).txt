@@ -1,0 +1,14 @@
+﻿Author of the code review: Annalise Hoover
+
+Date of the code review: 10/29/2019
+
+Sprint number: 3
+Name of the .cs file being reviewed: ContentLoader.cs
+
+Author of the .cs file being reviewed: Curtis Peace
+
+Specific comments on code quality: This file is extremely long, with many extensive methods that frequently repeat code with few variables. When loading enteties, almost the exact same couple commands are executed, with small variations. This might be better formatted as a separate method, with the LoadEntity method just calling that method for each entity. The file could also just use some reorganizing since so much is instantiated here. Comments would help, as well as making sure to space things in a way that is logical, which is not done now. 
+
+Number of minutes taken to complete the review: 15
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change: When adding new entities, a significant amount of code must be added. This could ve avoided if a separate method was created to do this for a defined entity, instead of doing it separately every time an entity is added. 

@@ -1,0 +1,16 @@
+﻿Author of the code review: Pravesh Khanal
+
+Date of the code review: 11/12/2019
+
+Sprint number: 4
+Name of the .cs file being reviewed: KeyboardController.cs
+
+Author of the .cs file being reviewed: Annalise Hoover
+
+Specific comments on code quality: Initially the dictionaries are initialized which is a better approach to to design the controller class than before. The add command and add hold command methods are simple and to the point. Although the Update 
+method is simple, it only allows one key to be mapped for one command. Maybe having one key fire multiple commands would be useful. 
+
+Number of minutes taken to complete the review: 11
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change: If I wanted to be able to add a key that does several commands at once, I wouldn't be
+able to. However, this could be avoided if a command that does multiple things is added without having to rely on one key being pressed to fire multiple commands.

@@ -1,0 +1,18 @@
+﻿Author of the code review: Curtis Peace
+
+Date of the code review: 11/12/2019
+
+Sprint number: 4
+Name of the .cs file being reviewed: WarpPipeBlockModel.cs, WarpPipeEnemyModel.cs, WarpPipeItemModel.cs
+
+Author of the .cs file being reviewed: Pravesh Khanal
+
+Specific comments on code quality:Warp pipe inherits from blockmodel, which is a good choice because it 
+requires many similar collision responses. WarpPipeEnemyModel has to know about enemy factory, which is unfortunate
+but likely necessary. WarpPipeItemModel likewise has to know about item factory.
+
+Number of minutes taken to write code review: 15
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could 
+not easily support that change: One change would be adding more warp pipes to teleport you to different places. This
+would be trivial to implement given the classes as they are now.

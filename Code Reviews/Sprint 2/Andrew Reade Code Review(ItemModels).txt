@@ -1,0 +1,20 @@
+﻿Author of Code Review: Andrew Reade
+
+Date of the code review: 10/15/2019
+
+Sprint number: 2
+Name of the .cs file being reviewed: CoinModel.cs, FireFlowerModel.cs, GreenMushroomModel.cs, ItemModel.cs, RedMushroomModel.cs, SuperStarModel.cs
+
+Author of the .cs file being reviewed: Curtis peace
+
+Specific comments on code quality: The abstract class ItemModel.cs helps to minimize the code repeated between each class, as all items
+function similarly, as they all are picked up by the player and all except the coin do something to change the state. Because the MarioModel
+class handles transformations when obtaining an item, this design works well for the items.
+
+Number of minutes taken to complete the review: 15
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+One change that could be made would be to add another item, such as the poison mushroom from some of the later Mario games. To implement this
+item, one would only have to create a new class (say, PoisonMushroomModel), have it implement ItemModel, then add an update and draw method.
+Then all that would be needed would be the textures and animation frames, and MarioModel have a method added, then the implementation would be
+complete.

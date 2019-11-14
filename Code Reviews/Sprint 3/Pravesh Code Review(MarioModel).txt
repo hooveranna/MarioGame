@@ -1,0 +1,27 @@
+﻿Author of the code review: Pravesh Khanal
+
+Date of the code review: 10/29/2019
+
+Sprint number: 3
+Name of the .cs file being reviewed: MarioModel
+
+Author of the .cs file being reviewed: Annalise Hoover, Andrew Reade
+
+Specific comments on code quality: In the constructor, several variables are defined, but it is unclear whether the state of mario should be handling some of those variables. Some more comments inside the constructor would be helpful.
+The Update method has a lot going on. First, handling of the invinsible frames could be done in a separate powerUp state. The handling of the illegal state could be moved to a method so that if we decide to add a new illegal state class,
+we wouldn't have to search through the update method to find and remove that piece of code. MarioHeightFactor is a great way to reduce Mario's height when changing state, but checking each state inside the update method and updating
+the height factor is making the use of the variable obsolete. That variable should be a way to reduce the use of if statements, and that is exactly what the EnemyHeightFactor in Enemy model does. Also the MarioHeightFactor should be
+changed inside Mario's state class, just like how EnemyModel changes EnemyHeightFactor inside the Consumed State class. Then, the MaxVelocity, MaxHeight, and correctly Mario's movement could all be in one method which the Update calls.
+This would make it easier to control or limit Mario's movement all from one place.
+Looking at the Collision Response, the spriteBox and collisionBox test seems to be happening so much, I was surprised that there wasn't a boolean set for that so that it could be reused instead of having to constantly write the same
+condition over and over. Breaking up the collision response for colliding with block and colliding with item is a great step, but those methods being called shouldn't exist inside MarioModel and they should instead be in a separate
+collision reponse class for Blocks and Items, or inside BlockModel and ItemModel. Looking at the collision reponse with blocks and items, the conditional statements are hard to follow since there are no comments describing each
+conditional check.
+Looking at all the Mario Movement methods, they seem to be doing the job fine, but there shouldn't be collision response code mixed with Mario movement. All the Mario Collisions should be in one place, and all the Mario Movement should
+be in another. Also, UpdateJump method should probably handle the maximum height jump, instead of doing that in the general update method separately. Lastly, Gravity looks fine for now and it looks like it belongs there.
+
+Number of minutes taken to complete the review: 27
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change: Adding or fixing collision response for Mario, Blocks, or Items would be tough to
+do as of the current implementation because that would require rewriting and editing the code inside MarioModel. Since MarioModel deals with the collision for blocks and items as well as itself, this class is doing too much work that
+other classes should be handling which would create hard-to-find bugs. Changing the location of the collision response for Blocks and Items inside another class like BlockModel or ItemModel would help with this issue.

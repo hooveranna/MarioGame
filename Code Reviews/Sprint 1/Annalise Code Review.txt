@@ -1,0 +1,14 @@
+﻿Author of the code review: Annalise Hoover
+
+Date of the code review:9/24/2019
+
+Sprint number: 1
+Name of the .cs files being reviewed: IdlingState.cs, CrouchingState.cs, FallingState.cs, IActionState.cs, JumpingState.cs, RunningState.cs
+
+Author of the .cs file being reviewed: Curtis Peace
+
+Specific comments on code quality: The State pattern is implemented well for different stages of motion, but the actual moving of the sprite will need to be added in. This should be easy to do however since the running state is defined separately without a separate moveRight and moveLeft class.
+
+Number of minutes taken to complete the review:15
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change: Right now, if certain features such as turning wanted to be available while the character was jumping/falling and not just moving, a significant number of methods and nests would have to be remade.

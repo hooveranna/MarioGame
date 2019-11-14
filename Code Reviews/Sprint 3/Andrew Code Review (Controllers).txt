@@ -1,0 +1,24 @@
+Author of the code review: Andrew Reade
+
+Date of the code review: 10/29/2019
+
+Sprint Number: 3
+Name of the .cs files being reviewed: KeyboardController.cs, GamePadController.cs, IController.cs
+
+Author of the .cs files being reviewed: Annalise Hoover
+
+Specific comments on code quality: The goal of the classes, to provide a class that handles all inputs from the keyboard and 
+gamepad, makes sense, and all of names of variables and methods are clear as to what is contained or performed by each, 
+respectively. Breaking up all of the functions if the class into functions provides logical function, with each one's function 
+being amply described by its name alone, while also not being overly long or complex. The only method that is somewhat of an 
+exception is the update method, as the method is quite long compared to the others, an issue that could easily be fixed by 
+adding two more methods, one for each of the held keys and the pressed keys, though the issue is not problematic toward the 
+function of the class as a whole.
+
+Number of minutes taken to complete review: 10
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not 
+easily support that change: one change that could be made to the game is adding functionality to keys or buttons that occurs when 
+they are released. This function could easily be supported by this current implementation by adding in an else if statement on line 
+60 of KeyboardController or line 71 of GamePadController, which would check if the the dictionary of released commands, which would 
+for instance be named releaseCommands, contains that key or button, and then execute the command dictated by that key.

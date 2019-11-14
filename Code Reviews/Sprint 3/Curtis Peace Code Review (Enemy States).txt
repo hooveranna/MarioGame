@@ -1,0 +1,17 @@
+﻿Author of the code review: Pravesh Khanal
+
+Date of the code review: 10/29/2019
+
+Sprint number: 3
+Name of the .cs file being reviewed: EnemyInjuredState.cs, EnemyStandardState.cs, EnemyStates.cs, IEnemyStates.cs
+
+Author of the .cs file being reviewed: Pravesh Khanal
+Specific comments on code quality: Interface pattern is an interesting choice considering the standard and injured states both inherit from a concrete
+class which implements an interface. The interface strikes me as unnecessary here. Inheritance from the EnemyStates concrete class allows for extensibility, 
+however.
+
+Number of minutes taken to complete the review: 15
+
+A hypothetical change could be adding a third state for enemies, such as when the koopa shell is moving rapidly. Inheritance from the EnemyStates class
+would make this easy, but the concrete class itself would have to have methods for transitioning to this third state, which would in turn make it
+difficult since these would have to be implemented by the standard and injured states.

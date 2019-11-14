@@ -1,0 +1,14 @@
+﻿Author of the code review: Annalise Hoover
+
+Date of the code review: 10/15/2019
+
+Sprint number: 2
+Name of the .cs file being reviewed: ParticleEngine.cs and Particles.cs
+
+Author of the .cs file being reviewed: Pravesh Khanal
+
+Specific comments on code quality: The overall goal of the class group makes sense, though the names don't really indicate which one relies on the other, which would be helpful. The breakup of work into methods is logical, and the standard "update" and "draw" methods are kept consistent from the rest of the project, which makes it easy to read and understand what is going on. The addition of a separate loop and method to designate how many particles to add helps make the method more universal and easier to change, which is good. The nesting of the two classes also works well, though their separate nested uses could be more easily declared, such as calling the Particles.cs method an individual "RenderParticle.cs" file or something similar. 
+
+Number of minutes taken to complete the review: 15
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change: If we want any other parts of the level to be permanently uncollidable, it may be dificult to implement them in this specific format if we want them to start off collidable. However, when implementing a large number of identical sprites, this format is easily manipulated to suit needs. 

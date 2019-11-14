@@ -1,0 +1,23 @@
+﻿Author of the code review: Andrew Reade
+
+Date of the code review: 11/12/2019
+
+Sprint number: 4
+Name of the .cs file being reviewed: FlagPoleModel.cs
+
+Author of the .cs file being reviewed: Pravesh Khanal
+
+Specific comments on code quality: The file itself is relatively short, with no overly long and complicated methods
+as well as very little repeated code. The only method that is an exception to this somewhat is RewardPointsByHeight,
+which has multiple if statements within the method: however, breaking these into methods would be inappropriate given
+the else if statements as well as there only being a single line of code withinn each block following the if statement.
+There are also many comments that give an accurate description as to what is happening within the class itself, and the
+names of the variables and methods give ample description as to their function.
+
+Number of minutes taken to write code review: 15
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could 
+not easily support that change: One change that could be made to the game would be subtracting points if mario lands too
+low on the flag, such as within the bottom 17 pixels of the flag. To accomadate this change, only one of the if statements
+in the RewardPointsByHeight method would have to be changed by replacing the line adding points with one that subtracts
+points, or if the amount of the flag subtracting points were to change, simply edit the number in the if statement.
